@@ -1,14 +1,1 @@
 testing this repo
-
-
-final List<SnapshotInfo> allInOtherWithoutOtherExplicit = allSnapshotsSorted(
-            namesOtherRepo,
-            patternOtherRepo,
-            GetSnapshotsRequest.SortBy.REPOSITORY,
-            order,
-            "-" + otherPrefixSnapshot1,
-            "-" + otherPrefixSnapshot2
-        );
-        assertThat(allInOtherWithoutOtherExplicit, is(allInOther));
-
-        assertThat(clusterAdmin().prepareGetSnapshots(matchAllPattern()).setSnapshots("other*", "-o*").get().getSnapshots(), empty(
